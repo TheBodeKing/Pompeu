@@ -15,26 +15,33 @@ const Header = () => {
     }
   }, [isDark]);
   return (
-    <header className="dark:bg-black bg-gray-300 text-amber-400 w-full relative px-10 py-5 lg:block hidden">
+    <header
+      className="dark:bg-black bg-white dark:text-amber-400 text-gray-800
+     w-full relative px-10 py-5 lg:block hidden min-h-[15vh]"
+    >
       {/*div geral, 3 partes*/}
       <div className="flex flex-row justify-between items-center">
         {/*pt1, imagem*/}
-        <img
-          src={logoImg}
-          alt="Logo da pompeu programador"
-          className="w-12 h-12"
-        />
+        <a href="/">
+          <img
+            src={logoImg}
+            alt="Logo da pompeu programador"
+            className="w-12 h-12 hover:scale-110 transition-all"
+          />
+        </a>
         {/*pt2, navbar*/}
         <div>
           <ul className="flex gap-5 uppercase">
             {navList.map(({ nome, id }) => (
-              <li
-                key={id}
-                className="cursor-pointer py-2 px-4 bg-gray-800 rounded-md
-                hover:bg-gray-900 hover:-translate-y-1 transition-all"
-              >
-                {nome}
-              </li>
+              <a href={id}>
+                <li
+                  key={id}
+                  className="cursor-pointer py-2 px-4 dark:bg-gray-700 bg-gray-200 rounded-md
+            dark:hover:bg-gray-900 dark:hover:text-amber-400 hover:bg-gray-800 hover:text-white hover:-translate-y-1 transition-all"
+                >
+                  {nome}
+                </li>
+              </a>
             ))}
           </ul>
         </div>
@@ -42,13 +49,14 @@ const Header = () => {
         <div>
           <button
             onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-lg bg-gray-400 dark:bg-gray-800 hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors"
+            className="p-2 rounded-lg dark:bg-gray-800 bg-gray-200 dark:hover:bg-gray-700
+             hover:bg-gray-300 transition-colors"
             aria-label="Toggle theme"
           >
             {isDark ? (
-              <Moon className="w-6 h-6 text-yellow-600" />
+              <Moon className="w-6 h-6 text-amber-400" />
             ) : (
-              <Sun className="w-6 h-6 text-yellow-500" />
+              <Sun className="w-6 h-6 text-amber-600" />
             )}
           </button>
         </div>
