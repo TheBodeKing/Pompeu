@@ -1,9 +1,21 @@
 import { logoImg } from "../utils";
 import { navList } from "../constants";
+import { Sun, Moon } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    // Apply theme to document
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
   return (
-    <header className="bg-black text-amber-400 w-full relative px-10 py-5 lg:block hidden">
+    <header className="dark:bg-black bg-gray-300 text-amber-400 w-full relative px-10 py-5 lg:block hidden">
       {/*div geral, 3 partes*/}
       <div className="flex flex-row justify-between items-center">
         {/*pt1, imagem*/}
@@ -25,6 +37,20 @@ const Header = () => {
               </li>
             ))}
           </ul>
+        </div>
+        {/*pt3, botões*/}
+        <div>
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="p-2 rounded-lg bg-gray-400 dark:bg-gray-800 hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {isDark ? (
+              <Moon className="w-6 h-6 text-yellow-600" />
+            ) : (
+              <Sun className="w-6 h-6 text-yellow-500" />
+            )}
+          </button>
         </div>
       </div>
     </header>
