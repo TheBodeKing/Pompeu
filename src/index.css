@@ -25,3 +25,7 @@ body {
 }
 
 @variant dark (&:where(.dark, .dark *));
+
+.titulo {
+  font-family: "Special Gothic Expanded One", sans-serif;
+}

@@ -16,7 +16,7 @@ const Header = () => {
   }, [isDark]);
   return (
     <header
-      className="dark:bg-black bg-white dark:text-amber-400 text-gray-800
+      className="dark:bg-black bg-gray-100 dark:text-amber-400 text-gray-800
      w-full relative px-10 py-5 lg:block hidden min-h-[15vh]"
     >
       {/*div geral, 3 partes*/}

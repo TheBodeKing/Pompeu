@@ -18,7 +18,7 @@ const Inicio = () => {
         />
         {/* pt2, texto*/}
         <div className="flex flex-col gap-5 items-start justify-center">
-          <h1 className="text-7xl max-w-[13ch]">Pompeu Programador</h1>
+          <h1 className="text-7xl max-w-[9ch] titulo">Pompeu Programador</h1>
           <p className="text-2xl">
             Desenvolvedor web full stack. <br /> Sites rápidos e responsivos,
             mas sem nunca faltar estilo

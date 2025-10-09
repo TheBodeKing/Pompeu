@@ -1,3 +1,5 @@
+import Contato from "./components/Contato";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Inicio from "./components/Inicio";
 import Servicos from "./components/Servicos";
@@ -10,6 +12,8 @@ function App() {
       <Inicio />
       <Sobre />
       <Servicos />
+      <Contato />
+      <Footer />
     </main>
   );
 }
