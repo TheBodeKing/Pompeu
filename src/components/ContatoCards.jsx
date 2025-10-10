@@ -12,10 +12,10 @@ const ContatoCards = () => {
         className="w-[70px] h-[70px] group-hover:scale-110 rounded-full"
       />
       <div className="flex flex-col justify-between h-full">
-        <h3 className="text-xl dark:text-white text-black">
+        <h3 className="text-xl dark:text-white text-black titulo">
           Entre em contato comigo por aqui
         </h3>
-        <p className="text-lg">Meu numero do zap</p>
+        <p className="text-lg corpo">Meu numero do zap</p>
       </div>
     </div>
   );

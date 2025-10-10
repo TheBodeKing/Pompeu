@@ -4,23 +4,35 @@ import { Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Header = () => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    const isDarkMode = saved ? saved === "dark" : true; // Default to dark if nothing saved
 
-  useEffect(() => {
-    // Apply theme to document
-    if (isDark) {
+    if (isDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
+    }
+
+    return isDarkMode;
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [isDark]);
   return (
     <header
       className="dark:bg-black bg-gray-100 dark:text-amber-400 text-gray-800
-     w-full relative px-10 py-5 lg:block hidden min-h-[15vh]"
+     w-full relative px-10 py-5 lg:flex hidden min-h-[15vh] items-center justify-center"
     >
       {/*div geral, 3 partes*/}
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex w-full flex-row justify-between items-center">
         {/*pt1, imagem*/}
         <a href="/">
           <img
@@ -37,7 +49,7 @@ const Header = () => {
                 <li
                   key={id}
                   className="cursor-pointer py-2 px-4 dark:bg-gray-700 bg-gray-200 rounded-md
-            dark:hover:bg-gray-900 dark:hover:text-amber-400 hover:bg-gray-800 hover:text-white hover:-translate-y-1 transition-all"
+            dark:hover:bg-gray-900 dark:hover:text-amber-400 hover:bg-gray-800 hover:text-white hover:-translate-y-1 transition-all titulo font-light "
                 >
                   {nome}
                 </li>

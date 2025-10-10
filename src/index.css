@@ -29,3 +29,11 @@ body {
 .titulo {
   font-family: "Special Gothic Expanded One", sans-serif;
 }
+
+.corpo {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px #fbbf24;
+}
