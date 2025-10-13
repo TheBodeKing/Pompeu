@@ -12,10 +12,8 @@ const Inicio = () => {
     if (window.innerWidth < 1024) {
       gsap.set([imgRef.current, tituloRef.current], {
         opacity: 1,
-        duration: 0,
-        delay: 0,
         webkitTextStrokeWidth: 0,
-        color: "#fbbf24 ",
+        color: "#fbbf24",
       });
       return;
     }
@@ -23,15 +21,15 @@ const Inicio = () => {
     gsap.to(imgRef.current, {
       opacity: 1,
       duration: 1,
-      delay: 1.5,
+      delay: 1.3,
     });
     const tl = gsap.timeline();
 
     tl.to(tituloRef.current, {
       opacity: 1,
       duration: 0,
-      delay: 0.5,
-      y: "80px",
+      delay: 0.3,
+      y: "75px",
     })
       .to(tituloRef.current, {
         opacity: 0,
@@ -42,7 +40,7 @@ const Inicio = () => {
         opacity: 1,
         duration: 0,
         delay: 0.2,
-        y: "-80px",
+        y: "-75px",
       })
       .to(tituloRef.current, {
         opacity: 0,
@@ -53,6 +51,7 @@ const Inicio = () => {
         opacity: 1,
         duration: 0,
         delay: 0.2,
+        scale: 1.02,
         y: 0,
         color: "#fbbf24 ",
         webkitTextStrokeWidth: 0,
@@ -84,7 +83,7 @@ const Inicio = () => {
           </h1>
           <p className="lg:text-2xl text-xl corpo">
             Desenvolvedor web full stack. <br /> Sites rápidos e responsivos,
-            mas sem nunca faltar estilo
+            mas nunca faltando estilo
           </p>
         </div>
       </div>

@@ -45,9 +45,8 @@ const Header = () => {
         <div>
           <ul className="flex gap-5 uppercase">
             {navList.map(({ nome, id }) => (
-              <a href={id}>
+              <a href={id} key={id}>
                 <li
-                  key={id}
                   className="cursor-pointer py-2 px-4 dark:bg-gray-700 bg-gray-400 rounded-md
             dark:hover:bg-gray-900 dark:hover:text-amber-400 hover:bg-gray-800 hover:text-white hover:-translate-y-1 transition-all titulo font-light "
                 >

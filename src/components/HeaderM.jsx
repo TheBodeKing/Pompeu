@@ -71,7 +71,7 @@ const HeaderM = () => {
   return (
     <header
       className="block lg:hidden dark:bg-black bg-gray-200 dark:text-amber-400 text-gray-800
-     w-full relative px-5 py-5 items-center justify-center"
+     w-full relative px-5 py-5 items-center justify-center transition-all"
     >
       {/*div geral, 2 partes*/}
       <div className="flex flex-row justify-between items-center">
@@ -115,6 +115,7 @@ const HeaderM = () => {
           <ul className="flex flex-col items-center justify-center h-screen gap-5 uppercase">
             {navList.map(({ nome, id }) => (
               <a
+                key={id}
                 href={id}
                 onClick={() => {
                   setBtn(!btn);

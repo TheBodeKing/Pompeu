@@ -15,7 +15,7 @@ const Contato = () => {
       min-h-[85vh] flex relative justify-center  transition-all"
     >
       {/* div geral, 2 pts */}
-      <div className="py-10 flex flex-col jusitfy-center items-center">
+      <div className="py-10 flex flex-col justify-center items-center">
         {/* geral pt1, titulo/subtitulo */}
         <div className="relative flex flex-col items-center gap-5 mb-5">
           <h2 className="text-3xl titulo">Contato</h2>
@@ -44,16 +44,14 @@ const Contato = () => {
             img={githubLogoImg}
             alt={"logo do github"}
             tit={"Veja meus outros projetos"}
-            txt={"https://github.com/TheBodeKing"}
+            txt={"github.com/TheBodeKing"}
             link={"https://github.com/TheBodeKing"}
           />
           <ContatoCards
             img={linkedinLogoImg}
             alt={"logo do linkedin"}
             tit={"Visite meu Linkedin"}
-            txt={
-              "https://www.linkedin.com/in/lucas-pompeu-de-pontes-70320718b/"
-            }
+            txt={"linkedin.com/in/lucas-pompeu-de-pontes-70320718b/"}
             link={
               "https://www.linkedin.com/in/lucas-pompeu-de-pontes-70320718b/"
             }

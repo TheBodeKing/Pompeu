@@ -1,20 +1,14 @@
-import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const Carousel = ({ currentIndex, setCurrentIndex }) => {
-  // Placeholder images - replace with your actual images
-  const images = [
-    "https://via.placeholder.com/800x500/667eea/ffffff?text=Image+1",
-    "https://via.placeholder.com/800x500/764ba2/ffffff?text=Image+2",
-    "https://via.placeholder.com/800x500/f093fb/ffffff?text=Image+3",
-  ];
+import { serv } from "../constants";
 
+const Carousel = ({ currentIndex, setCurrentIndex }) => {
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? serv.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === serv.length - 1 ? 0 : prev + 1));
   };
 
   const goToIndex = (index) => {
@@ -26,7 +20,7 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
       {/* Image */}
       <div className="w-full lg:h-70 h-50 bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden mb-4">
         <img
-          src={images[currentIndex]}
+          src={serv[currentIndex].img}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover"
         />
@@ -45,7 +39,7 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
 
         {/* Number Buttons */}
         <div className="flex gap-2">
-          {images.map((_, index) => (
+          {serv.map((_, index) => (
             <button
               key={index}
               onClick={() => goToIndex(index)}
