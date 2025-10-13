@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { placeholderImg } from "../utils";
+import { minhaFotoImg } from "../utils";
 import Linha from "./Linha";
 import gsap from "gsap";
 
@@ -62,14 +62,14 @@ const Inicio = () => {
   return (
     <section
       id="inicio"
-      className="lg:px-10 px-5 py-5 dark:bg-gray-900 bg-white dark:text-amber-400 text-gray-800 
-      min-h-[85vh] flex relative justify-center items-center"
+      className="lg:px-10 px-5 py-5 dark:bg-gray-900 bg-gray-100 dark:text-amber-400 text-gray-800 
+      min-h-[85vh] flex relative justify-center items-center  transition-all"
     >
       {/* div geral, 2 partes */}
       <div className="flex lg:flex-row flex-col-reverse lg:gap-25 gap-15 items-center justify-center max-w-[1140px]">
         {/* pt1, imagem*/}
         <img
-          src={placeholderImg}
+          src={minhaFotoImg}
           alt="Foto de Pompeu"
           className="w-[300px] h-[400px] lg:opacity-0"
           ref={imgRef}

@@ -14,8 +14,9 @@ const Sobre = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: boxRef.current,
-        start: "top bottom",
+        start: "top 60%",
         once: true,
+        markers: true,
       },
     });
     tl.fromTo(
@@ -59,18 +60,18 @@ const Sobre = () => {
   return (
     <section
       id="sobre"
-      className="lg:px-10 px-5 py-5 dark:bg-gray-900 bg-white dark:text-amber-400 text-gray-800 
-      min-h-fit flex relative justify-center "
+      className="lg:px-10 px-5 py-5 dark:bg-gray-900 bg-gray-100 dark:text-amber-400 text-gray-800 
+      min-h-fit flex relative justify-center  transition-all"
     >
       {/* div geral, 2 partes */}
-      <div
-        className="flex flex-col items-center gap-10 py-10 relative"
-        ref={boxRef}
-      >
+      <div className="flex flex-col items-center gap-10 py-10 relative">
         {/* pt1, titulo */}
         <h2 className="text-3xl titulo">SOBRE</h2>
         {/* pt2, conteudo */}
-        <div className="lg:max-w-[70%] max-w-[90%] text-xl dark:text-white flex flex-col gap-5 corpo text-justify">
+        <div
+          className="lg:max-w-[70%] max-w-[90%] text-xl dark:text-white flex flex-col gap-5 corpo text-justify h-fit"
+          ref={boxRef}
+        >
           <p ref={p1} className="opacity-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
             distinctio, neque nesciunt qui nam numquam facilis. Animi quidem

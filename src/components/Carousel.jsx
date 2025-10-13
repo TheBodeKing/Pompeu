@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+const Carousel = ({ currentIndex, setCurrentIndex }) => {
   // Placeholder images - replace with your actual images
   const images = [
     "https://via.placeholder.com/800x500/667eea/ffffff?text=Image+1",
@@ -39,7 +37,7 @@ const Carousel = () => {
         {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors cursor-pointer"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-6 h-6 dark:text-amber-400 text-gray-800" />
@@ -51,10 +49,10 @@ const Carousel = () => {
             <button
               key={index}
               onClick={() => goToIndex(index)}
-              className={`w-10 h-10 rounded-lg transition-colors ${
+              className={`w-10 h-10 rounded-lg transition-colors cursor-pointer ${
                 currentIndex === index
                   ? "bg-amber-400 text-gray-900"
-                  : "bg-gray-200 dark:bg-gray-800 dark:text-amber-400 text-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+                  : "bg-gray-200 dark:bg-gray-800 dark:text-amber-400 text-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 "
               }`}
               aria-label={`Go to image ${index + 1}`}
             >
@@ -66,7 +64,7 @@ const Carousel = () => {
         {/* Next Button */}
         <button
           onClick={goToNext}
-          className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors cursor-pointer"
           aria-label="Next image"
         >
           <ChevronRight className="w-6 h-6 dark:text-amber-400 text-gray-800" />

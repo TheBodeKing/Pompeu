@@ -28,8 +28,8 @@ const Header = () => {
   }, [isDark]);
   return (
     <header
-      className="dark:bg-black bg-gray-100 dark:text-amber-400 text-gray-800
-     w-full relative px-10 py-5 lg:flex hidden min-h-[15vh] items-center justify-center"
+      className="dark:bg-black bg-gray-300 dark:text-amber-400 text-gray-800
+     w-full relative px-10 py-5 lg:flex hidden min-h-[15vh] items-center justify-center  transition-all"
     >
       {/*div geral, 3 partes*/}
       <div className="flex w-full flex-row justify-between items-center">
@@ -48,7 +48,7 @@ const Header = () => {
               <a href={id}>
                 <li
                   key={id}
-                  className="cursor-pointer py-2 px-4 dark:bg-gray-700 bg-gray-200 rounded-md
+                  className="cursor-pointer py-2 px-4 dark:bg-gray-700 bg-gray-400 rounded-md
             dark:hover:bg-gray-900 dark:hover:text-amber-400 hover:bg-gray-800 hover:text-white hover:-translate-y-1 transition-all titulo font-light "
                 >
                   {nome}
@@ -61,8 +61,8 @@ const Header = () => {
         <div>
           <button
             onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-lg dark:bg-gray-800 bg-gray-200 dark:hover:bg-gray-700
-             hover:bg-gray-300 transition-colors"
+            className="p-2 rounded-lg dark:bg-gray-800 bg-gray-400 dark:hover:bg-gray-700
+             hover:bg-gray-800 transition-colors cursor-pointer"
             aria-label="Toggle theme"
           >
             {isDark ? (
